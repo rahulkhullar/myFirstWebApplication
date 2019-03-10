@@ -31,6 +31,10 @@ pipeline {
     stage('Deploy') {
         steps {
             echo "Deploying to stage environments for more tests cases";
+            sshagent(['deployment']) {
+                sh 'scp -o StrictHostKeyChecking=no target/*war jenkins@10.0.0.11:/apache-tomcat-8.5.37/webapps/'
+            }
+            
         }
     }
 }
