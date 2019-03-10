@@ -28,15 +28,15 @@ pipeline {
         }
     }
     
-    stage('Deploy') {
-        steps {
-            echo "Deploying to stage environments for more tests cases";
-            sshagent(['maven_deployment']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*war jenkins@10.0.0.11:/home/jenkins/apache-tomcat-8.5.37/webapps/'
-            }
+    //stage('Deploy') {
+      //  steps {
+        //    echo "Deploying to stage environments for more tests cases";
+          //  sshagent(['maven_deployment']) {
+            //    sh 'scp -o StrictHostKeyChecking=no target/*war jenkins@10.0.0.11:/home/jenkins/apache-tomcat-8.5.37/webapps/'
+           // }
             
-        }
-    }
+       // }
+    //}
 }
 
     post {
