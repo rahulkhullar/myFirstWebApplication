@@ -1,5 +1,5 @@
 pipeline {
-    agent label {'build_on_slave'}
+    agent { label 'build_on_slave' }
     stages {
         stage('Git-checkout') {
             steps {
