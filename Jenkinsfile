@@ -1,4 +1,5 @@
-node{
+pipeline {
+  agent {label 'build_on_slave'}
   stage('SCM Checkout') {
   git 'https://github.com/rahulkhullar/myFirstWebApplication'
 }
